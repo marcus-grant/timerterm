@@ -1,6 +1,6 @@
 // src/cli.rs
 
-fn parse_args(args: Vec<String>) -> Option<u32> {
+pub fn parse_args(args: Vec<String>) -> Option<u32> {
     // TODO: Consider using a defaults module or struct for default values
     match args.len() {
         1 => Some(600), // Default to 10 minutes if no duration provided
@@ -27,4 +27,10 @@ mod tests {
         let args = vec!["timeterm".to_string()];
         assert_eq!(super::parse_args(args), Some(600));
     }
+
+    // #[test]
+    // fn parse_args_handles_mins_secs() {
+    //     // Test: "mm:ss", "mm:ss" parses to: (mm * 60) + ss
+    //     // NOTE: important to handle leading zeros, single digits and 
+    // }
 }

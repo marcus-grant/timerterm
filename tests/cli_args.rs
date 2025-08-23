@@ -2,9 +2,9 @@
 use assert_cmd::Command;
 
 #[test]
-fn duration_parsing() {
-    // Test: Program should accept '30' as a 30-second duration
+fn runs_1sec_simple_args() {
+    // Test: Simple check that 1sec is waited
     let mut cmd = Command::cargo_bin("timeterm").unwrap();
-    let out = cmd.arg("30").timeout(std::time::Duration::from_secs(2));
+    let out = cmd.arg("1").timeout(std::time::Duration::from_secs(2));
     out.assert().success();
 }
