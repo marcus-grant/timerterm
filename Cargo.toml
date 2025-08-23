@@ -2,5 +2,15 @@
 name = "timeterm"
 version = "0.1.0"
 edition = "2021"
+authors = ["Marcus Grant <marcusfg@pm.me"]
+description = "A terminal timer that runs alongside your shell"
+license = "MIT"
 
 [dependencies]
+libc = "0.2.175"
+
+[dev-dependencies]
+assert_cmd = "2.0.17"
+rexpect = "0.6.2"
+vt100 = "0.16.2"
+
